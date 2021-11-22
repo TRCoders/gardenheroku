@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <title>Image Host</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-dark">
+<section class="text-center bg-dark text-white">
+<h1>Shadow Uploader</h1>
+</section>
+<hr>
+<div class="d-flex justify-content-center align-content-start text-white">
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Image Name</label>
+            <input type="text" id="name" placeholder="Name" 
+                   value="" name="name" required>
+        </div>
+        <div>
+            <label for="desc">Image Description</label>
+            <textarea id="desc" name="desc" value="" rows="2" 
+                      placeholder="Description" required>
+            </textarea>
+        </div>
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" 
+                   name="image" value="" required>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<hr>
+
+<h1 class="text-center">Uploaded Images</h1>
+<div class="h-100 row align-items-center col px-5">
+    <% items.forEach(function(image) { %>
+    <div>
+        <div>
+            <img class="p-1"src="data:image/<%=image.img.contentType%>;base64,
+                 <%=image.img.data.toString('base64')%>">
+            <div>
+                <h5><%= image.name %></h5>
+                  
+
+
+                <p><%= image.desc %></p>
+
+
+
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+<script src="jqBootstrapValidation.js"></script>
+<script src="contact_me.js"></script>
+<!-- Core theme JS-->
+<script src="scripts.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
