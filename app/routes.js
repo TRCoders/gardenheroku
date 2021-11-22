@@ -131,7 +131,7 @@ const upload = multer({ storage: storage });
         res.send(result)
       })
     })
-?
+})
 
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
@@ -189,4 +189,4 @@ function isLoggedIn(req, res, next) {
         return next();
 
     res.redirect('/');
-}
+};

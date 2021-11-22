@@ -1,7 +1,7 @@
 let dateInput = document.querySelector('#button').addEventListener('click', getPicData)
 
 function getPicData(){
-    const inputVal = document.querySelector('#dateinput').value
+    const inputVal = document.querySelector('#plantSearch').value
     
     let url =`mongodb+srv://TRCoder:dbpassword@messagefromdownunder.xv6xa.mongodb.net/plantsdb?retryWrites=true&w=majority`
 fetch(url)

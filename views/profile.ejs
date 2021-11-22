@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Image Host</title>
+    <title>Garden Profile</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
@@ -11,18 +11,18 @@
 </head>
 <body class="bg-dark">
 <section class="text-center bg-dark text-white">
-<h1>Shadow Uploader</h1>
+<h1>Garden Guides</h1>
 </section>
 <hr>
 <div class="d-flex justify-content-center align-content-start text-white">
     <form action="/" method="POST" enctype="multipart/form-data">
         <div>
-            <label for="name">Image Name</label>
+            <label for="name">Plant Name</label>
             <input type="text" id="name" placeholder="Name" 
                    value="" name="name" required>
         </div>
         <div>
-            <label for="desc">Image Description</label>
+            <label for="desc">Plant Description</label>
             <textarea id="desc" name="desc" value="" rows="2" 
                       placeholder="Description" required>
             </textarea>
@@ -40,7 +40,7 @@
 
 <hr>
 
-<h1 class="text-center">Uploaded Images</h1>
+<h1 class="text-center">Uploaded Guides</h1>
 <div class="h-100 row align-items-center col px-5">
     <% items.forEach(function(image) { %>
     <div>
