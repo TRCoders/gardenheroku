@@ -36,15 +36,39 @@ const upload = multer({ storage: storage });
 
     // Images upload
     
-    app.get('/plants', function(req, res) {
-      res.render('plants.ejs');
+  app.get('/plants', function(req, res) {
+    db.collection('plantlists').find({common_name: req.query.common_name}, {duration: req.query.duration}).limit(5).toArray((err, result) => {
+        if (err) return console.log(err)
+            console.log(result)
+            res.render('plants.ejs', {
+            plantInfo: result
+        }
+    )
   });
+
+  })
+
+  app.get('/guide', function(req, res) {
+      res.render('guide.ejs')
+  })
+
+  app.get('/posts', function(req, res) {
+    res.render('posts.ejs')
+  })
+
+  app.get('/forumpage', function(req, res) {
+    res.render('forumpage.ejs')
+  })
+
+  app.get('/forum', function(req, res) {
+    res.render('forum.ejs')
+  })
 
   app.post('/', upload.single('image'), (req, res, next) => {
     
     const obj = {
         name: req.body.name,
-        desc: req.body.desc,
+        desc: req.body.descc,
         img: {
             data: fs.readFileSync(path.join(pathurl + req.file.filename)),
             contentType: 'image/png' 

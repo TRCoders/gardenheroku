@@ -26,6 +26,18 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
+    },
+    plantId          : {
+        Symbol       : String,
+        Species      : String,
+        Common_Name  : String,
+        State_and_Providence : String,
+        Duration     : String,
+        Native_Status: String,
+        Category     : String,
+        Family       : String,
+        Order        : String,
+        Growth_Habit : String
     }
 
 });

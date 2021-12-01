@@ -1,0 +1,37 @@
+.dbbg{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color:lightseagreen;
+    background-size: auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("img/dbicon.svg");
+}
+
+.parasect {
+    height: 35%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: solid black 20px;
+  }
+
+.bodybg{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color:lightseagreen;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("img/vinebg.png");
+}
+
+.textbg{
+    background-color: rgb(0, 128, 0, 0.5);
+}

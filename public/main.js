@@ -1,20 +1,41 @@
-let dateInput = document.querySelector('#button').addEventListener('click', getPicData)
+let nameInput = document.querySelector('#nameButton').addEventListener('click', getNameData)
+let durationInput = document.querySelector('#durationButton').addEventListener('click', getDurationData)
 
-function getPicData(){
+function getNameData(){
     const inputVal = document.querySelector('#plantSearch').value
-    
-    let url =`mongodb+srv://TRCoder:dbpassword@messagefromdownunder.xv6xa.mongodb.net/plantsdb?retryWrites=true&w=majority`
-fetch(url)
-    .then(res => res.json()) // parse response as JSON
-    .then(data => {
-    console.log(data)
-    // document.querySelector("h2").innerText = data.collection.items[0].data[0].title
-    // document.querySelector("span").innerText = data.collection.items[0].data[0].description
-    // document.querySelector("img").src = data.collection.items[0].links[0].href
-    })
-    
-    .catch(err => {
-       console.log(`Error somthing went wrong.`) 
-    })
+    let url = `/plants?common_name=${inputVal}`
+window.location.replace(url)
 }
 
+function getDurationData(){
+    const inputVal = document.querySelector('#plantSearch').value
+    let url = `/plants?duration=${inputVal}`
+window.location.replace(url)
+}
+
+//NavBar
+function hideIconBar(){
+    let iconBar = document.getElementById("iconBar");
+    let navigation = document.getElementById("navigation");
+    iconBar.setAttribute("style", "display:none;");
+    navigation.classList.remove("hide");
+}
+
+function showIconBar(){
+    let iconBar = document.getElementById("iconBar");
+    let navigation = document.getElementById("navigation");
+    iconBar.setAttribute("style", "display:block;");
+    navigation.classList.add("hide");
+}
+
+//Comment
+function showComment(){
+    let commentArea = document.getElementById("comment-area");
+    commentArea.classList.remove("hide");
+}
+
+//Reply
+function showReply(){
+    let replyArea = document.getElementById("reply-area");
+    replyArea.classList.remove("hide");
+}

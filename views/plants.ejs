@@ -6,42 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link src="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="bootstrap.css" rel="stylesheet"  crossorigin="anonymous">
+    <link href="databg.css" rel="stylesheet">
     <title>Plant Database</title>
 </head>
-<body>
+<body class="dbbg">
     <section>
         <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/">Home</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          
-              <div class="collapse navbar-collapse" id="navbarColor02">
-                <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Community</a>
-                  </li>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/"><img src="img/homepage.svg" width="64" height="64"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              
+                  <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/plants">Plant DB</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/forum">Forum</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign-Up</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/guide">Guide</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
         </header>
         <h1 class="text-center">Plant Database</h1>
-        <input type="text" class="align-item-center" id="plantSearch" placeholder="Search">
-        <p>Search by Symbol: <button type="button" id="button">Search</button></p>
+        <section>
+            <input type="text" class="align-item-center" id="plantSearch" placeholder="Search">
+            <p>Search by Name: <button type="button" id="nameButton">Search</button></p>
+            <p>Search by Annual/Perenniel: <button type="button" id="durationButton">Search</button></p>
+        </section>
+
         </section>
         <section>
             <h2></h2>
             <span></span>
-            <img>
         </section>
-    <p>Testing: <span class="plantInfo"></span></p>
+    <p><span class="plantData"></span>
+    </p>
+
+    <% for(let i = 0; i < plantInfo.length; i++) { %>
+    <section class="parasect">
+            <p><span>Common Name: </span><%= plantInfo[i].common_name %></p>
+            <p><span>Scientific Name: </span><%= plantInfo[i].scientific_name.x %></p>
+            <p><span>Species: </span><%= plantInfo[i].species %></p>
+            <p><span>Symbol: </span><%= plantInfo[i].symbol %></p>
+            <p><span>Plant Life Duration: </span><%= plantInfo[i].duration %></p>
+            <p><span>State and Province: </span><%= plantInfo[i].state_and_province %></p>
+            <p><span>Category: </span><%= plantInfo[i].category %></p>
+            <p>Want to contribute to the database? Click <a href="/newinfo">here</a> to send information to our staff!</p>
+    </section>
+    <% } %>
 <script src="main.js"></script>
 </body>
 </html>
