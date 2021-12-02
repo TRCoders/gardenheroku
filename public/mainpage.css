@@ -1,141 +1,162 @@
-.mainbg{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-image: url("img/bg.jpg");
-    border-radius: 15px;
+/* Style the header */
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
 }
 
-.secondbg{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-image: url("img/treeroots.jpg");
-    border-radius: 15px;
+/* Page content */
+.content {
+  padding: 16px;
 }
 
-.thirdbg{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-image: url("img/plantscarry.jpg");
-    border-radius: 15px;
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.mainbg {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("img/bg.jpg");
+  border-radius: 15px;
+}
+
+.secondbg {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("img/treeroots.jpg");
+  border-radius: 15px;
+}
+
+.thirdbg {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("img/plantscarry.jpg");
+  border-radius: 15px;
 }
 
 .parasect {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.25);
-    color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: solid black 20px;
-  }
-
-.bodybg{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-color:lightseagreen;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-image: url("img/vinebg.png");
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: solid black 20px;
 }
 
-.textbg{
-    background-color: rgb(0, 128, 0, 0.10);
+.bodybg {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: lightseagreen;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("img/2.jpg");
 }
 
-.clickme{
-    display:block;
+.textbg {
+  background-color: rgb(0, 128, 0, 0.1);
 }
 
-.nobullets{
-    list-style-type: none;
+.clickme {
+  display: block;
 }
 
-  .wrapper .button{
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    float: left;
-    margin: 0 5px;
-    overflow: hidden;
-    background: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease-out;
-  }
-  .wrapper .button:hover{
-    width: 200px;
-  }
-  .wrapper .button .icon{
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    border-radius: 50px;
-    box-sizing: border-box;
-    line-height: 60px;
-    transition: all 0.3s ease-out;
-  }
-  .wrapper .button:nth-child(1):hover .icon{
-    background: #4267B2;
-  }
-  .wrapper .button:nth-child(2):hover .icon{
-    background: #1DA1F2;
-  }
-  .wrapper .button:nth-child(3):hover .icon{
-    background: #E1306C;
-  }
-  .wrapper .button:nth-child(4):hover .icon{
-    background: #333;
-  }
-  .wrapper .button:nth-child(5):hover .icon{
-    background: #ff0000;
-  }
-  .wrapper .button .icon i{
-    font-size: 25px;
-    line-height: 60px;
-    transition: all 0.3s ease-out;
-  }
-  .wrapper .button:hover .icon i{
-    color: #fff;
-  }
-  .wrapper .button span{
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 60px;
-    margin-left: 10px;
-    transition: all 0.3s ease-out;
-  }
-  .wrapper .button:nth-child(1) span{
-    color: #4267B2;
-  }
-  .wrapper .button:nth-child(2) span{
-    color: #1DA1F2;
-  }
-  .wrapper .button:nth-child(3) span{
-    color: #E1306C;
-  }
-  .wrapper .button:nth-child(4) span{
-    color: #333;
-  }
-  .wrapper .button:nth-child(5) span{
-    color: #ff0000;
-  }
+.nobullets {
+  list-style-type: none;
+}
 
-  .extraClass{
-      font-size: 80px;
-  }
+.bodycover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+.content {
+  height: 800px;
+  width: 1500px;
+  position: relative;
+}
+.content .images {
+  height: 100%;
+  width: 100%;
+}
+.content .images img {
+  height: 100%;
+  width: 100%;
+}
+.btm-slides {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.btm-slides span {
+  height: 15px;
+  width: 50px;
+  border: 2px solid white;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.sliders {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  cursor: pointer;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.1);
+}
+.sliders:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.right {
+  right: 0;
+}
+.sliders span {
+  line-height: 41px;
+  font-size: 35px;
+  color: white;
+}
+
+footer {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 60px;
+  background: grey;
+}
+
+.caption {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+}

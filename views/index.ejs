@@ -1,87 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="bootstrap.css" rel="stylesheet"  crossorigin="anonymous">
-    <link href="mainpage.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome.min.css">
-    <title>Gardeners For All</title>
-</head>
-<body class="bodybg">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/"><img src="img/homepage.svg" width="64" height="64"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          
-              <div class="collapse navbar-collapse" id="navbarColor02">
-                <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/plants">Plant DB</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/forum">Forum</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/signup">Sign-Up</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/guide">Guide</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <section class="row">
-      <section class="col-md-4 container secondbg my-2 mx-auto clickme" style="width: 30%">
-        <section class="parasect align-items-center justify-content-center">
-            <h2 class="text-white text-center container textbg">Plant Database</h2>
-            <p class="textbg py-auto display-3">Is there a plant you want to search up or maybe curious about whether is it annual or perenniel?
-    
-            Ready to look up some plants? Click <a href="/plants">here</a> to get started!
-            </p>
-        </section>
-      </section>
-      <section class="col-md-4  container mainbg my-2 mx-auto" style="width: 30%">
-      <section class="parasect align-items-center justify-content-center">
-          <h2 class="text-white text-center container textbg">Welcome to Gardeners For All!</h2>
-          <p class="textbg my-auto display-4">Gardeners For All is a community-based gardening website that provides tips and guides for people to take care of and maintain their gardens whether you're starting out or looking for a better way to get a more colorful and plentiful garden!
-  
-          Ready to look up some plants? Click <a href="/plants">here</a> to get started!
-          </p>
-        </section>
-  </section>
-    <section class="col-md-4 container thirdbg my-2 mx-auto" style="width: 30%">
-      <section class="parasect align-items-center justify-content-center">
-        <h2 class="text-white text-center container textbg">Community</h2>
-        <p class="textbg my-auto display-4">Want to come to chat with other gardeners and share tips and tricks on how to raise your garden? Maybe you want to show off your wonderful garden instead. Come join the forums to discuss various garden-related topics!
 
-        Ready to look up some plants? Click <a href="/plants">here</a> to get started!
-        </p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="mainpage.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css/">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+    rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <title>Gardeners For All</title>
+</head>
+
+<body class="bodybg">
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="/">GFA</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/plants?common_name=">Database</a></li>
+          <li class="nav-item"><a class="nav-link" href="/guide">Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="/signup">Sign-Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Masthead-->
+  <header class="masthead">
+    <div class="container px-4 px-lg-5 h-100">
+      <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-8 align-self-end">
+          <h1 class="text-white font-weight-bold">Gardeners For All</h1>
+          <hr class="divider" />
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white mb-5">Gardeners For All is a community-based gardening website that provides tips and
+            guides for people to take care of and maintain their gardens whether you're starting out or looking for a
+            better way to get a more colorful and plentiful garden!
+
+            Ready to look up some plants? Click the button below to get started!</p>
+          <a class="btn btn-primary btn-xl" href="/plants?common_name=">CLICK HERE!</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="portfolio">
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+      </div>
+    </div>
+  </div>
+  <!-- Footer-->
+  <footer class="bg-light py-5">
+    <section class="container px-4 px-lg-5">
+      <section class="small text-center text-muted">
+        <a href="https://www.facebook.com/profile.php?id=100063987799966"><i
+            class="fa fa-facebook-official text-black"></i></a>
+        <a href="https://www.linkedin.com/in/tyleralrobinson/"><i class="fa fa-linkedin-square text-black"></i></a>
+        <a href="https://github.com/TRCoders"><i class="fa fa-github text-black"></i></a>
+        <a href="https://twitter.com/TylerALRobinson"><i class="fa fa-twitter text-black"></i></a>
       </section>
-  </section>
     </section>
-    </section>
-    <footer class="row bg-success navbar-dark justify-content-center">
-        <section class="col-12">
-            <h5 class="text-white">Contact Information</h5>
-            <ul class="nobullets">
-                <li><a href="https://www.facebook.com/profile.php?id=100063987799966" class="text-decoration: none;"><i class="fa fa-facebook-official extraClass" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/tyleralrobinson/" class="text-decoration: none;"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                </a></li>
-                <li><a href="https://github.com/TRCoders" class="text-decoration: none;"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                <li><a href="https://twitter.com/TylerALRobinson" class="text-decoration: none;"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            </ul>
-        </section>
-    </footer>
+    <div class="container px-4 px-lg-5">
+      <div class="small text-center text-muted">Copyright &copy; 2021 - Tyler Robinson</div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+  <script src="scripts.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
