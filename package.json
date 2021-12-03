@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "16.8.0"
-  }
+  },
   "description": "Community-based garden app database/guide for people to contribute and expand",
   "main": "server.js",
   "scripts": {
