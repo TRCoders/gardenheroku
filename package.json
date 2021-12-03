@@ -1,7 +1,10 @@
 {
   "name": "garden-project",
   "version": "1.0.0",
-  "description": "",
+  "engines": {
+    "node": "16.8.0"
+  }
+  "description": "Community-based garden app database/guide for people to contribute and expand",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
