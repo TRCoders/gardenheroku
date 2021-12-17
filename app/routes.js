@@ -2,10 +2,8 @@ module.exports = function (app, passport, db, multer, ObjectId) {
   const fs = require('fs');
   const imageModel = require('../model');
   const path = require('path');
-  // normal routes ===============================================================
-
   const pathurl = './uploads/'
-
+  
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, 'uploads')
@@ -14,18 +12,19 @@ module.exports = function (app, passport, db, multer, ObjectId) {
       cb(null, file.fieldname + '-' + Date.now())
     }
   });
-
+  
   const upload = multer({ storage: storage });
 
+  // Webpage routes ===============================================================
 
-  // Main Webpage
+  // Renders main webpage
   app.get('/', function (req, res) {
     res.render('index.ejs');
   });
 
-  // Plant Database
+  // Searches through database to find Common Name of the plants and limit to only 5 search results
   app.get('/plants', function (req, res) {
-    db.collection('plantlists').find({ common_name: req.query.common_name }, { duration: req.query.duration }).limit(5).toArray((err, result) => {
+    db.collection('plantlists').find({ common_name: req.query.common_name }).limit(5).toArray((err, result) => {
       if (err) return console.log(err)
       console.log(result)
       res.render('plants.ejs', {
@@ -36,7 +35,7 @@ module.exports = function (app, passport, db, multer, ObjectId) {
 
   })
 
-  // Plant Guides
+  // Renders guide page then retrieve info from imageModel to show on guide web page.
   app.get('/guide', function (req, res) {
     imageModel.find({}, (err, items) => {
       if (err) {
@@ -49,22 +48,20 @@ module.exports = function (app, passport, db, multer, ObjectId) {
     });
   })
 
-  // Forum Posts
-  app.get('/posts', function (req, res) {
-    res.render('posts.ejs')
-  })
+  // User Profile, finds name, desc and img then displays them to profile.
+  app.get('/profile', isLoggedIn, (req, res) => {
+    imageModel.find({ createdBy: req.user._id }, (err, items) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send('Error occured', err);
+      }
+      else {
+        res.render('profile.ejs', { items: items });
+      }
+    });
+  });
 
-  // Forum Page
-  app.get('/forumpage', function (req, res) {
-    res.render('forumpage.ejs')
-  })
-
-  // Forum Main Page
-  app.get('/forum', function (req, res) {
-    res.render('forum.ejs')
-  })
-
-  // Profile
+  // Creates a POST request for name, description, and image then post them to profile.
   app.post('/profile', upload.single('image'), (req, res, next) => {
     db.collection('users').save({ createdBy: req.user._id }, (err, result) => {
       const obj = {
@@ -80,28 +77,14 @@ module.exports = function (app, passport, db, multer, ObjectId) {
           console.log(err);
         }
         else {
-          // item.save();
           res.redirect('/profile');
         }
       });
     })
   });
 
-  // User Profile
-  app.get('/profile', isLoggedIn, (req, res) => {
-    imageModel.find({ createdBy: req.user._id }, (err, items) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send('Error occured', err);
-      }
-      else {
-        res.render('profile.ejs', { items: items });
-      }
-    });
-  });
-
+  // Post tutorial to current profile page.
   app.post('/', upload.single('image'), (req, res, next) => {
-
     const obj = {
       name: req.body.name,
       desc: req.body.desc,
@@ -117,51 +100,35 @@ module.exports = function (app, passport, db, multer, ObjectId) {
           console.log(err);
         }
         else {
-          // item.save();
           res.redirect('/profile');
         }
       });
     })
   });
 
+  // WIP =====================================
+  // Forum Posts
+  app.get('/posts', function (req, res) {
+    res.render('posts.ejs')
+  })
+
+  // Forum Page
+  app.get('/forumpage', function (req, res) {
+    res.render('forumpage.ejs')
+  })
+
+  // Forum Main Page
+  app.get('/forum', function (req, res) {
+    res.render('forum.ejs')
+  })
+
+  // WIP ====================================
+
   // LOGOUT ==============================
   app.get('/logout', function (req, res) {
     req.logout();
     res.redirect('/');
   });
-
-  // message board routes ===============================================================
-
-  // app.post('/messages', (req, res) => {
-  //   db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
-  //     if (err) return console.log(err)
-  //     console.log('saved to database')
-  //     res.redirect('/profile')
-  //   })
-  // })
-
-  app.put('/messages', (req, res) => {
-    db.collection('plantlists')
-      .find({ _id: 0, })
-
-    app.put('/thumbDown', (req, res) => {
-      db.collection('plantlists')
-        .findOneAndUpdate({
-          name: req.body.name,
-          msg: req.body.msg
-        }, {
-          $set: {
-            thumbUp: req.body.thumbUp - 1
-          }
-        }, {
-          sort: { _id: -1 },
-          upsert: true
-        }, (err, result) => {
-          if (err) return res.send(err)
-          res.send(result)
-        })
-    })
-  })
 
   // =============================================================================
   // AUTHENTICATE (FIRST LOGIN) ==================================================

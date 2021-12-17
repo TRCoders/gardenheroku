@@ -1,108 +1,108 @@
 <!doctype html>
 <html>
+
 <head>
-    <title>Garden Profile</title>
-    <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="bootstrap.css" rel="stylesheet"  crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome icons (free version)-->
+  <title>Garden Profile</title>
+  <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-            </ol>
-        </nav>
-    </header>
-</section>
-<section style="background-color: lightseagreen;">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card mb-4">
-            <div class="card-body text-center">
-              <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-chat/ava3.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-              <h5 class="my-3">Profile</h5>
-              <div class="card-body">
+  <header>
+    <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+      </ol>
+    </nav>
+  </header>
+  <!--Profile Information Section-->
+  <section style="background-color: lightseagreen;">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-chat/ava3.png" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">Profile</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">example name</p>
+                </div>
+                <hr>
                 <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Full Name</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">Johnatan Smith</p>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                          <p class="mb-0">Email</p>
-                        </div>
-                        <div class="col-sm-9">
-                          <p class="text-muted mb-0"><p>latenightmower@gmail.com</p>
-                        </div>
-                      </div>
-                      <hr>
+                  <div class="col-sm-3">
+                    <p class="mb-0">Email</p>
                   </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">
+                    <p>example email</p>
+                  </div>
+                </div>
+                <hr>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-8">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="d-flex justify-content-center align-content-start text-white">
-                <form action="/" method="POST" enctype="multipart/form-data">
-                    <h2 class="text-white">Create your guide</h2>
-                    <div>
-                        <label for="name">Title</label>
-                        <input type="text" id="name" placeholder="Name" 
-                               value="" name="name" required>
-                    </div>
-                    <hr>
-                    <div>
-                        <label for="desc">Description</label>
-                        <textarea id="desc" name="desc" value="" rows="2" 
-                                  placeholder="Description" required>
+      </div>
+      <!--Form for user input to create their tutorials/guides-->
+      <div class="col-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="d-flex justify-content-center align-content-start text-white">
+              <form action="/" method="POST" enctype="multipart/form-data">
+                <h2 class="text-white">Create your guide</h2>
+                <div>
+                  <label for="name">Title</label>
+                  <input type="text" id="name" placeholder="Name" value="" name="name" required>
+                </div>
+                <hr>
+                <div>
+                  <label for="desc">Description</label>
+                  <textarea id="desc" name="desc" value="" rows="2" placeholder="Description" required>
                         </textarea>
-                    </div>
-                    <hr>
-                    <div>
-                        <label for="image">Upload Image</label>
-                        <input type="file" id="image" 
-                               name="image" value="" required>
-                    </div>
-                    <hr>
-                    <div>
-                        <button type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-              </div>
+                </div>
+                <hr>
+                <div>
+                  <label for="image">Upload Image</label>
+                  <input type="file" id="image" name="image" value="" required>
+                </div>
+                <hr>
+                <div>
+                  <button type="submit">Submit</button>
+                </div>
+              </form>
             </div>
           </div>
-          <div class="row">
-            <div class="align-items-center  col-md-12" style="width:25%">
-              <div class="card mb-4 mb-md-0">
-                <div class="card-body">
-                  <div class="h-100 row align-items-center col px-5">
-                    <% items.forEach(function(image) { %>
-                    <h3 class="mb-4 text-white text-center"><%= image.name %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="align-items-center  col-md-12" style="width:25%">
+          <div class="card mb-4 mb-md-0">
+            <div class="card-body">
+              <div class="h-100 row align-items-center col px-5">
+                <!--Display created guide to profile page-->
+                <% items.forEach(function(image) { %>
+                  <h3 class="mb-4 text-white text-center">
+                    <%= image.name %>
+                  </h3>
+                  <div>
                     <div>
-                        <div>
-                            <img class="p-1"src="data:image/<%=image.img.contentType%>;base64,
+                      <img class="p-1" src="data:image/<%=image.img.contentType%>;base64,
                                  <%=image.img.data.toString('base64')%>">
-                            <div>
-                                <h5 class="mb-4 text-white text-center"><%= image.name %></h5>
-                                <p><%= image.desc %></p>
-                
-                
-                
-                            </div>
-                        </div>
+                      <div>
+                        <p>
+                          <%= image.desc %>
+                        </p>
+                      </div>
                     </div>
-                    <% }) %>
-                </div>
-                </div>
+                  </div>
+                  <% }) %>
               </div>
             </div>
           </div>
@@ -111,24 +111,17 @@
     </div>
   </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Contact form JS-->
-<script src="jqBootstrapValidation.js"></script>
-<script src="contact_me.js"></script>
-<!-- Core theme JS-->
-<script src="scripts.js"></script>
-<script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="jqBootstrapValidation.js"></script>
+  <script src="contact_me.js"></script>
+  <script src="scripts.js"></script>
+  <script src="main.js"></script>
 
 </body>
+
 </html>
